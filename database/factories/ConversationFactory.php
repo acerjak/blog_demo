@@ -20,11 +20,13 @@ class ConversationFactory extends Factory
      *
      * @return array
      */
+
     public function definition()
     {
+        $user = User::orderByRaw('RAND()')->first();
 
         return [
-            'user_id' => User::factory(),
+            'user_id' => $user->factory(),
             'title' => $this->faker->sentence,
             'body' => $this->faker->text,
         ];
