@@ -26,7 +26,7 @@ class ConversationFactory extends Factory
         $user = User::orderByRaw('RAND()')->first();
 
         return [
-            'user_id' => $user->factory(),
+            'user_id' => $user->id,
             'title' => $this->faker->sentence,
             'body' => $this->faker->text,
         ];
